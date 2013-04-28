@@ -1,0 +1,14 @@
+Item                            Quantity
+Momentary Push Button           4 pcs.
+
+LTD5721WY-K2                    1 pc.
+Dual Seven Segment Display
+
+74HC595                         2 pcs.
+Shift Register  
+
+10 k-Ohm Potentiometer          1 pc.
+
+USB to UART Converter           1 pc.
+
+gizDuino mini                   1 pc.
