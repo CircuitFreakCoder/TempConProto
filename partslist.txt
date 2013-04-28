@@ -1,5 +1,5 @@
 Item                            Quantity
-Momentary Push Button           4 pcs.
+Momentary Push Button           3 pcs.
 
 LTD5721WY-K2                    1 pc.
 Dual Seven Segment Display
