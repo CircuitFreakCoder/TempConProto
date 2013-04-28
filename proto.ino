@@ -12,8 +12,7 @@
   const int UP = 4;
   const int DOWN = 5;
   const int SET_LIMIT = 3;
-  const int OK = 2;
-  
+    
   int limit = 50;
  
    
@@ -29,12 +28,11 @@
     pinMode(relayPin, OUTPUT);
     pinMode(inputPin, INPUT);
     
-    pinMode(OK, INPUT);
     pinMode(UP, INPUT);
     pinMode(DOWN, INPUT);
     pinMode(SET_LIMIT, INPUT);
     
-    digitalWrite(OK, HIGH);
+    
     digitalWrite(UP, HIGH);
     digitalWrite(DOWN, HIGH);
     digitalWrite(SET_LIMIT, HIGH);
@@ -57,7 +55,7 @@
   
   void displayNumber(int number){
      
-   int numbers[] = { 0B10000000, 0B11110010, 0B01001000, 0B01100000, 0B00110010, 0B00100100, 0B00000100, 0B11110000, 0B00000000,0B00110000 };
+   int numbers[] = { 0B10000000, 0B11110010, 0B01001000, 0B01100000, 0B00110010, 0B00100100, 0B00000100, 0B11110000, 0B00000000,0B00100000 };
   
    int onesPlace = number%10;
    int tensPlace = number/10;
@@ -78,6 +76,8 @@
   
   void setLimit() {
    
+    boolean toggle = debounce(SET_LIMIT);
+    boolean presentToggle;
     do{
      
       if(debounce(UP)== LOW && limit < 99 ) //increment current limit
@@ -87,8 +87,10 @@
         limit--;
         
       displayNumber(limit);
+      
+      presentToggle = debounce(SET_LIMIT);
         
-   }while(debounce(OK) != LOW);
+   }while(toggle != presentToggle);
    
     delay(1000);
     
