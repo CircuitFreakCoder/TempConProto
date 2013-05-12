@@ -1,4 +1,3 @@
-
   //Pin connected to ST_CP of 74HC595
   int latchPin = 10;
   //Pin connected to SH_CP of 74HC595
@@ -23,8 +22,6 @@
   };
 
 
-
-
   void setup() {
   
     //set pins to output so you can control the shift register
@@ -33,6 +30,7 @@
     pinMode(dataPin, OUTPUT);
     pinMode(sensor, INPUT);
   }
+
 
   void loop(){
   
